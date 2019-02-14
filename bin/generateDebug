@@ -1,0 +1,5 @@
+#!/usr/bin/env node
+
+const concatDebugFiles = require("../src/concatDebugFiles");
+
+concatDebugFiles(process.cwd());

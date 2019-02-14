@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "debug": "./bin/generateDebug"
+  },
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch"
@@ -10,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^2.4.2",
     "fs-extra": "^7.0.1",
     "globby": "^9.0.0"
   },
