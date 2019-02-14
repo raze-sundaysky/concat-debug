@@ -1,0 +1,20 @@
+{
+  "name": "sfxdebugtool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs-extra": "^7.0.1",
+    "globby": "^9.0.0"
+  },
+  "devDependencies": {
+    "jest": "^24.1.0",
+    "tempy": "^0.2.1"
+  }
+}
