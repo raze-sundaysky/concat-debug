@@ -16,6 +16,7 @@ function getMinute(timeText) {
  * @param {number} minute
  */
 function addTime(timeText, minute) {
+
   const newMinute = Number(timeText.split(":")[0]) + minute;
   return `${newMinute}:${timeText.split(":")[1]}`;
 }
@@ -26,7 +27,8 @@ function addTime(timeText, minute) {
  * @returns {array[]}
  */
 function readAndParse(filePath) {
-  const fileContents = fs.readFileSync(filePath, "utf-8");
+  let fileContents = fs.readFileSync(filePath, "utf-8");
+  fileContents = fileContents.substring(0,fileContents.lastIndexOf('\n'));
   return parse(fileContents);
 }
 
@@ -53,7 +55,7 @@ module.exports = class DebugFiles {
     return stringify(this.checkpoints);
   }
 
-  addFile(filePath) {
+  addFiles(filePath) {
     const checkpoints = readAndParse(filePath);
     this.checkpoints.push(...checkpoints);
   }

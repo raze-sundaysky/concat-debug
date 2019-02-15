@@ -6,11 +6,10 @@ const chalk = require("chalk");
 
 module.exports = workingDir => {
   const debugFilePaths = globby.sync(path.join(workingDir, "**", "Debug.txt"));
-
   const debugFiles = new DebugFiles();
 
   debugFilePaths.forEach(file => {
-    debugFiles.addFile(file);
+    debugFiles.addFiles(file);
   });
 
   // Do the relevant transformations
