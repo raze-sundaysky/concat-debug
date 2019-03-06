@@ -1,15 +1,17 @@
-const fs = require("fs-extra");
-const path = require("path");
-const globby = require("globby");
-const DebugFiles = require("./DebugFiles");
-const chalk = require("chalk");
+const fs = require("fs-extra"); //File system
+const path = require("path"); //Path
+const globby = require("globby"); //batch files
+const DebugFiles = require("./DebugFiles"); //Debug Class
+const chalk = require("chalk"); //color terminal
 
+//receives working dir, eventually generates a new file at dir
 module.exports = workingDir => {
-  const debugFilePaths = globby.sync(path.join(workingDir, "**", "Debug.txt"));
+  const debugFilePaths = globby.sync(path.join(workingDir, "**", "Debug.txt")); //get all debug files
   const debugFiles = new DebugFiles();
 
+  //parse into array and add each array to array
   debugFilePaths.forEach(file => {
-    debugFiles.addFiles(file);
+    debugFiles.parseAndAddFiles(file);
   });
 
   // Do the relevant transformations
@@ -18,7 +20,6 @@ module.exports = workingDir => {
   const masterDebugContents = debugFiles.mergeToText();
 
   const masterDebugPath = path.join(workingDir, "masterDebug.txt");
-
   if (fs.existsSync(masterDebugPath)) {
     console.log("There is already a file in:");
     console.log(chalk.magenta(masterDebugPath));
