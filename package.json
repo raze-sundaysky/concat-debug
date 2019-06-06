@@ -15,10 +15,10 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "fs-extra": "^7.0.1",
-    "globby": "^9.0.0"
+    "globby": "^9.2.0"
   },
   "devDependencies": {
-    "jest": "^24.1.0",
+    "jest": "^24.8.0",
     "tempy": "^0.2.1"
   }
 }

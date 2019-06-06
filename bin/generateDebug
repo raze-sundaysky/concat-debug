@@ -2,4 +2,4 @@
 
 const concatDebugFiles = require("../src/concatDebugFiles");
 
-concatDebugFiles(process.cwd());
+concatDebugFiles(process.argv[2]);

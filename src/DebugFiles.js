@@ -41,7 +41,7 @@ module.exports = class DebugFiles {
     let newMinute = 1;
     this.checkpoints = this.checkpoints.map(([text, time]) => {
       if (lastTime && time === `0:00.000`) {
-        console.log(lastTime);
+        // console.log(lastTime);
         newMinute = getMinute(lastTime) + 1;
       }
 
