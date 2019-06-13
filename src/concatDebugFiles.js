@@ -3,6 +3,7 @@ const path = require("path"); //Path
 const globby = require("globby"); //batch files
 const DebugFiles = require("./DebugFiles"); //Debug Class
 const chalk = require("chalk"); //color terminal
+const toMid = require("./toMid")
 
 //receives working dir, eventually generates a new file at dir
 module.exports = workingDir => {
@@ -31,4 +32,7 @@ module.exports = workingDir => {
   console.log(chalk.cyan(masterDebugPath));
 
   fs.outputFileSync(masterDebugPath, masterDebugContents);
+
+  toMid(masterDebugPath)
+
 };
